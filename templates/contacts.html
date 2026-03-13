@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html>
-<head><title>Контакты</title></head>
+
+<head>
+    <title>{{ title }}</title>
+</head>
+
 <body>
     <h1>Наши контакты</h1>
     <p>Телефон: {{ phone }}</p>
     <p>Адрес: {{ address }}</p>
     <a href="{% url 'nurai:index' %}">Вернуться на главную</a>
 </body>
+
 </html>

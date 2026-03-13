@@ -1,7 +1,7 @@
 from django.urls import path
 from .views import index, contacts
 
-app_name = 'nurai'
+app_name = 'nurai' # Это обязательно!
 
 urlpatterns = [
     path('', index, name='index'),
