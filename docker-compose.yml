@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    container_name: love_django_app
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+      - /app/Love/db.sqlite3 # Не перезаписываем БД из хоста
+    environment:
+      - DEBUG=True
+      - PYTHONUNBUFFERED=1
+    command: sh -c "cd Love && python manage.py migrate --noinput && python manage.py runserver 0.0.0.0:8000"
+    restart: unless-stopped
